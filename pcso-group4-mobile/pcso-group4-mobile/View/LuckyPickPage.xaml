@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            x:Class="pcso_group4_mobile.View.LuckyPickPage"
+             Title="PCSO Lotto Lucky Picker">
+    <StackLayout
+        Orientation="Vertical"
+        Margin="20">
+
+        <Label 
+            Margin="20"
+            FontSize="30"
+            Text="Lucky Pick"
+            HorizontalOptions="Center"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Random Numbers"
+                    Margin="0, 0, 5, 0"
+                    BackgroundColor= "RoyalBlue"
+                    HorizontalOptions="Fill" />
+
+            <Button Text="Frequency"
+                    Grid.Column="1"
+                    Margin="5, 0, 0, 0"
+                    BackgroundColor= "RoyalBlue"
+                    HorizontalOptions="Fill" />
+        </Grid>
+
+        <Picker x:Name="picker_1" 
+                Title="Select Lotto Game" 
+                Margin="0, 40, 0 , 0"
+                ItemsSource="{Binding gamesList}" 
+                ItemDisplayBinding="{Binding Game}" 
+                SelectedIndexChanged="Picker_SelectedIndexChanged" />
+
+
+        <Grid Margin="0, 40, 0, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Label Text="00"
+                   FontSize="40"
+                   Margin="0, 0, 5, 0"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill" />
+
+            <Label Text="00"
+                   FontSize="40"
+                   Grid.Column="1"
+                   Margin="0, 0, 5, 0"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill" />
+            
+            <Label Text="00"
+                   FontSize="40"
+                   Grid.Column="2"
+                   Margin="0, 0, 5, 0"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill" />
+            
+            <Label Text="00"
+                   FontSize="40"
+                   Grid.Column="3"
+                   Margin="0, 0, 5, 0"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill" />
+            
+            <Label Text="00"
+                   FontSize="40"
+                   Grid.Column="4"
+                   Margin="0, 0, 5, 0"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill" />
+            
+            <Label Text="00"
+                   FontSize="40"
+                   Grid.Column="5"
+                   Margin="0, 0, 5, 0"
+                   HorizontalTextAlignment="Center"
+                   HorizontalOptions="Fill" />
+        </Grid>
+    </StackLayout>
+</ContentPage>
