@@ -55,6 +55,10 @@
                 </x:Array>
             </Picker.ItemsSource>
         </Picker>
+
+        <Picker x:Name="game_picker1"             
+            Margin="0, 40, 0 , 0" >          
+        </Picker>
         <!--#endregion-->
 
         <!--#region horizontal labels for 6 numbers -->

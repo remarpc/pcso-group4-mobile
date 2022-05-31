@@ -22,10 +22,22 @@ public partial class LuckyPickPage : ContentPage
         };
 
 
+        var monkeyList = new List<string>();
+        monkeyList.Add("Baboon");
+        monkeyList.Add("Capuchin Monkey");
+        monkeyList.Add("Blue Monkey");
+        monkeyList.Add("Squirrel Monkey");
+        monkeyList.Add("Golden Lion Tamarin");
+        monkeyList.Add("Howler Monkey");
+        monkeyList.Add("Japanese Macaque");  
+        
+        game_picker1.ItemsSource = monkeyList;
+        game_picker1.Title = "Select a monkey";
+
         //picker_1.SetBinding(Picker.ItemsSourceProperty, "games");
         //picker_1.ItemDisplayBinding = new Binding("Game");
         //picker_1.ItemsSource = games;
-        
+
 
         BindingContext = luckyPickViewModel;
         //picker_1.ItemDisplayBinding = new Binding("Game");
@@ -46,4 +58,5 @@ public partial class LuckyPickPage : ContentPage
         //}
         //picker_2.ItemsSource = new ObservableCollection<PizzaIngrediens>(collection[index].PizzaIngredientsList);
     }
+
 }
