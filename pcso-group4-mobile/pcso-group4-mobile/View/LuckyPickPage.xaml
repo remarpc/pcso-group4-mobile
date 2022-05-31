@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            x:Class="pcso_group4_mobile.View.LuckyPickPage"
+             x:Class="pcso_group4_mobile.View.LuckyPickPage"
              Title="PCSO Lotto Lucky Picker">
     <StackLayout
         Orientation="Vertical"
@@ -36,25 +36,35 @@
         <!--#endregion-->
 
         <!--#region dropdownbox for list of games -->
-        <!--<Picker x:Name="picker_1" 
+        <Border
+            Stroke="gray"
+            Margin="0, 0, 0 , 20"
+            Padding="5,0,5,0"
+            HorizontalOptions="Fill">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5,5,5,5"/>
+            </Border.StrokeShape>
+            <!--<Picker x:Name="picker_1" 
                 Title="Select Lotto Game" 
                 Margin="0, 40, 0 , 0"
                 ItemsSource="{Binding games}"
                 ItemDisplayBinding="{Binding Game}" 
                 SelectedIndexChanged="Picker_SelectedIndexChanged" />-->
-        <Picker x:Name="game_picker" 
-            Title="Select Lotto Game" 
-            Margin="0, 40, 0 , 0" >
+            <Picker x:Name="game_picker" 
+                    Title="Select Lotto Game"
+                    FontSize="14"
+                    HorizontalOptions="Fill">
                 <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>642</x:String>
-                    <x:String>645</x:String>
-                    <x:String>649</x:String>
-                    <x:String>655</x:String>
-                    <x:String>658</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>642</x:String>
+                        <x:String>645</x:String>
+                        <x:String>649</x:String>
+                        <x:String>655</x:String>
+                        <x:String>658</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Border>
         <!--#endregion-->
 
         <!--#region horizontal labels for 6 numbers -->
