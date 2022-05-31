@@ -3,11 +3,131 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="pcso_group4_mobile.View.CombinationsPage"
              Title="PCSO Lotto Lucky Picker">
-    <StackLayout>
+    <StackLayout
+        Orientation="Vertical"
+        Margin="20">
+
+        <!--#region Page Title-->
         <Label 
-                FontSize="25"
-                Text="Combinations"
-                VerticalOptions="Center" 
-                HorizontalOptions="Center" />
+            Margin="20"
+            FontSize="22"
+            Text="Enter 6-Number Combination"
+            HorizontalOptions="Center"/>
+        <!--#endregion-->
+
+        <!--#region dropdownbox for list of games -->
+        <Border
+            Stroke="gray"
+            Margin="0, 0, 0 , 20"
+            Padding="5,0,5,0"
+            HorizontalOptions="Fill">
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="5,5,5,5"/>
+            </Border.StrokeShape>
+            <!--<Picker x:Name="picker_1" 
+                    Title="Select Lotto Game" 
+                    Margin="0, 40, 0 , 0"
+                    ItemsSource="{Binding games}"
+                    ItemDisplayBinding="{Binding Game}" 
+                    SelectedIndexChanged="Picker_SelectedIndexChanged" />-->
+            <Picker x:Name="game_combination" 
+                    Title="Select Lotto Game"
+                    FontSize="14"
+                    HorizontalOptions="Fill">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>642</x:String>
+                        <x:String>645</x:String>
+                        <x:String>649</x:String>
+                        <x:String>655</x:String>
+                        <x:String>658</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </Border>
+        <!--#endregion-->
+
+        <!--#region horizontal textboxes for 6 numbers -->
+        <Grid Margin="0, 40, 0, 0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Entry
+                x:Name="txtNum1"
+                FontSize="14"
+                Margin="0, 0, 5, 0"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill"/>
+
+            <Entry
+                x:Name="txtNum2"
+                Grid.Column="1"
+                FontSize="14"
+                Margin="0, 0, 5, 0"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill" />
+
+            <Entry
+                x:Name="txtNum3"
+                Grid.Column="2"
+                FontSize="14"
+                Margin="0, 0, 5, 0"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill" />
+
+            <Entry
+                x:Name="txtNum4"
+                Grid.Column="3"
+                FontSize="14"
+                Margin="0, 0, 5, 0"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill" />
+
+            <Entry
+                x:Name="txtNum5"
+                Grid.Column="4"
+                FontSize="14"
+                Margin="0, 0, 5, 0"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill" />
+
+            <Entry
+                x:Name="txtNum6"
+                Grid.Column="5"
+                FontSize="14"
+                Margin="0, 0, 5, 0"
+                HorizontalTextAlignment="Center"
+                HorizontalOptions="Fill" />
+
+        </Grid>
+        <!--#endregion-->
+
+        <!--#region Add button -->
+        <Button Text="Add"
+                    BackgroundColor= "RoyalBlue"
+                    HorizontalOptions="Fill" />
+        <!--#endregion-->
+
+        <!--#region Listbox-->
+        <CollectionView
+            Background="White"
+            ItemsSource="{Binding Combinations}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Label
+                        TextColor="Black"
+                        FontSize="20"
+                        Margin="20"
+                        Text="{Binding}"/>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <!--#endregion-->
     </StackLayout>
 </ContentPage>
