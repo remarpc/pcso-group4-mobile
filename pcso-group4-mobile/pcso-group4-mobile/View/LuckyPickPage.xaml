@@ -7,11 +7,15 @@
         Orientation="Vertical"
         Margin="20">
 
+        <!--#region Page Title-->
         <Label 
             Margin="20"
             FontSize="30"
             Text="Lucky Pick"
             HorizontalOptions="Center"/>
+        <!--#endregion-->
+        
+        <!--#region Two side-by-side buttons-->
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -29,15 +33,31 @@
                     BackgroundColor= "RoyalBlue"
                     HorizontalOptions="Fill" />
         </Grid>
+        <!--#endregion-->
 
-        <Picker x:Name="picker_1" 
+        <!--#region dropdownbox for list of games -->
+        <!--<Picker x:Name="picker_1" 
                 Title="Select Lotto Game" 
                 Margin="0, 40, 0 , 0"
-                ItemsSource="{Binding gamesList}" 
+                ItemsSource="{Binding games}"
                 ItemDisplayBinding="{Binding Game}" 
-                SelectedIndexChanged="Picker_SelectedIndexChanged" />
+                SelectedIndexChanged="Picker_SelectedIndexChanged" />-->
+        <Picker x:Name="game_picker" 
+            Title="Select Lotto Game" 
+            Margin="0, 40, 0 , 0" >
+                <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>642</x:String>
+                    <x:String>645</x:String>
+                    <x:String>649</x:String>
+                    <x:String>655</x:String>
+                    <x:String>658</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <!--#endregion-->
 
-
+        <!--#region horizontal labels for 6 numbers -->
         <Grid Margin="0, 40, 0, 0">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
@@ -49,12 +69,14 @@
             </Grid.ColumnDefinitions>
 
             <Label Text="00"
+                   x:Name="lblNum1"
                    FontSize="40"
                    Margin="0, 0, 5, 0"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Fill" />
 
             <Label Text="00"
+                   x:Name="lblNum2"
                    FontSize="40"
                    Grid.Column="1"
                    Margin="0, 0, 5, 0"
@@ -62,6 +84,7 @@
                    HorizontalOptions="Fill" />
             
             <Label Text="00"
+                   x:Name="lblNum3"
                    FontSize="40"
                    Grid.Column="2"
                    Margin="0, 0, 5, 0"
@@ -69,6 +92,7 @@
                    HorizontalOptions="Fill" />
             
             <Label Text="00"
+                   x:Name="lblNum4"
                    FontSize="40"
                    Grid.Column="3"
                    Margin="0, 0, 5, 0"
@@ -76,6 +100,7 @@
                    HorizontalOptions="Fill" />
             
             <Label Text="00"
+                   x:Name="lblNum5"
                    FontSize="40"
                    Grid.Column="4"
                    Margin="0, 0, 5, 0"
@@ -83,11 +108,23 @@
                    HorizontalOptions="Fill" />
             
             <Label Text="00"
+                   x:Name="lblNum6"
                    FontSize="40"
                    Grid.Column="5"
                    Margin="0, 0, 5, 0"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Fill" />
         </Grid>
+        <!--#endregion-->
+
+        <!--#region Page Title-->
+        <Label 
+            x:Name="lblMessage"
+            Margin="20"
+            FontSize="20"
+            TextColor="Green"
+            Text="Lucky Pick"
+            HorizontalOptions="Center"/>
+        <!--#endregion-->
     </StackLayout>
 </ContentPage>
