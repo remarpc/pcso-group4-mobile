@@ -9,4 +9,7 @@ public partial class CombinationsPage : ContentPage
 		InitializeComponent();
 		BindingContext = combinationsViewModel;
 	}
+
+
+
 }
