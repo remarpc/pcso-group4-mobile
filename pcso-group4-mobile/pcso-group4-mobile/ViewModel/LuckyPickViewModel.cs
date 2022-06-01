@@ -19,12 +19,19 @@ namespace pcso_group4_mobile.ViewModel;
 public partial class LuckyPickViewModel : BaseViewModel
 {
     ServiceClient sc = new ServiceClient();
-    public List<GameModel> games { get; set; }
+    public ObservableCollection<GameModel> games { get; set; }
 
     public LuckyPickViewModel()
     {
         games = sc.GetGamesAsync();
     }
+
+    private void GenerateLuckyPickNumbers(int num)
+    {
+        var rnd = new Random();
+        var randomNumbers = Enumerable.Range(1, num).OrderBy(x => rnd.Next()).Take(6).ToList();
+    }
+
    
     
 }
