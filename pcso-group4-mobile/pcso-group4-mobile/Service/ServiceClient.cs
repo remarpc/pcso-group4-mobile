@@ -11,17 +11,18 @@ namespace pcso_group4_mobile.Service;
 
 public class ServiceClient
 {
-    public const string url = "https://pcso-group4-backend.azurewebsites.net/gameitems";
+    public const string baseUrl = "https://pcso-group4-backend.azurewebsites.net/";
 
-    public List<GameModel> GetGamesAsync()
+    public ObservableCollection<GameModel> GetGamesAsync()
     {
         try
-        {            
-            var client = new HttpClient();
-            var response = client.GetStringAsync(url);
-            var games = JsonConvert.DeserializeObject<List<GameModel>>(response.Result);
-            return games; 
-            
+        {
+            using (var client = new HttpClient())
+            {
+                var response = client.GetStringAsync(baseUrl + "gameitems");
+                var games = JsonConvert.DeserializeObject<ObservableCollection<GameModel>>(response.Result);
+                return games;
+            }           
         }
         catch (Exception)
         {

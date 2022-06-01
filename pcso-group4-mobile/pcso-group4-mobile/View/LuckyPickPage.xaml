@@ -22,10 +22,12 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Button Text="Random Numbers"
+            <Button 
+                    Text="Random Numbers"
                     Margin="0, 0, 5, 0"
                     BackgroundColor= "RoyalBlue"
-                    HorizontalOptions="Fill" />
+                    HorizontalOptions="Fill"
+                    Clicked="btnRandomNumber"/>
 
             <Button Text="Frequency"
                     Grid.Column="1"
@@ -44,24 +46,19 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="5,5,5,5"/>
             </Border.StrokeShape>
-
-            <!--<Picker x:Name="picker_1" 
-                Title="Select Lotto Game" 
-                Margin="0, 40, 0 , 0"
-                ItemsSource="{Binding games}"
-                ItemDisplayBinding="{Binding Game}" 
-                SelectedIndexChanged="Picker_SelectedIndexChanged" />-->
+         
             <Picker x:Name="game_picker"                    
                     Title="Select Lotto Game"
                     FontSize="14"
                     HorizontalOptions="Fill"
                     ItemsSource="{Binding games}"
                     ItemDisplayBinding="{Binding GameID}"
-                    >
+                    SelectedIndexChanged="game_picker_SelectedIndexChanged">
             </Picker>
+            
             <!--#endregion-->
         </Border>
-
+       
 
 
 
