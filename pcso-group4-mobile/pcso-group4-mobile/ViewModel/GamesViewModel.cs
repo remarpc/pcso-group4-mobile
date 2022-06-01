@@ -23,4 +23,10 @@ namespace pcso_group4_mobile.ViewModel
         public int Game { get; set; }
     }
 
+    public async Task<List<Games>> GetAll()
+    { 
+        
+    
+    }
+
 }
