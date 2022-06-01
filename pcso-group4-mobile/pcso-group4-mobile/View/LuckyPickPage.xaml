@@ -46,7 +46,7 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="5,5,5,5"/>
             </Border.StrokeShape>
-         
+
             <Picker x:Name="game_picker"                    
                     Title="Select Lotto Game"
                     FontSize="14"
@@ -55,15 +55,15 @@
                     ItemDisplayBinding="{Binding GameID}"
                     SelectedIndexChanged="game_picker_SelectedIndexChanged">
             </Picker>
-            
+
             <!--#endregion-->
         </Border>
-       
 
 
 
         <!--#region horizontal labels for 6 numbers -->
         <Grid Margin="0, 40, 0, 0">
+
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
                 <ColumnDefinition Width="*" />
@@ -73,52 +73,136 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <Label Text="00"
-                   x:Name="lblNum1"
-                   FontSize="40"
-                   Margin="0, 0, 5, 0"
-                   HorizontalTextAlignment="Center"
-                   HorizontalOptions="Fill" />
+            <!--<Border
+                Stroke="Yellow"
+                BackgroundColor="Yellow" 
+                Margin="1,1,1,1"
+                HorizontalOptions="Fill">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5,5,5,5"/>
+                </Border.StrokeShape>
+                <Label Text="00"
+                       x:Name="lblNum1"
+                       FontSize="40"                       
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Fill" 
+                       TextColor="Black"/>
+            </Border>-->
 
-            <Label Text="00"
+            <Border BackgroundColor="Gold"
+                Stroke="gray"
+                Margin="0, 0, 0, 0"
+                Padding="2,2,2,2"
+                HorizontalOptions="Fill">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="120,120,120,120"/>
+                </Border.StrokeShape>
+                <Label Text="00"
+                       x:Name="lblNum1"
+                       FontSize="35"
+                       Grid.Column="0"
+                       Margin="0, 0, 0, 0"
+                       HorizontalTextAlignment="Center"
+                       HorizontalOptions="Fill"
+                       FontAttributes="Bold"
+                       TextColor="Black"/>
+            </Border>
+
+            <Border BackgroundColor="Gold"
+                Grid.Column="1"
+                Stroke="gray"
+                Margin="0, 0, 0, 0"
+                Padding="2,2,2,2"
+                HorizontalOptions="Fill">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="120,120,120,120"/>
+                </Border.StrokeShape>
+                <Label Text="00"
                    x:Name="lblNum2"
-                   FontSize="40"
+                   FontSize="35"
                    Grid.Column="1"
-                   Margin="0, 0, 5, 0"
+                   Margin="0, 0, 0, 0"
                    HorizontalTextAlignment="Center"
-                   HorizontalOptions="Fill" />
+                   HorizontalOptions="Fill"
+                   FontAttributes="Bold"
+                   TextColor="Black"/>
+            </Border>
 
-            <Label Text="00"
+            <Border BackgroundColor="Gold"
+                Grid.Column="2"
+                Stroke="gray"
+                Margin="0, 0, 0, 0"
+                Padding="2,2,2,2"
+                HorizontalOptions="Fill">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="120,120,120,120"/>
+                </Border.StrokeShape>
+                <Label Text="00"
                    x:Name="lblNum3"
-                   FontSize="40"
+                   FontSize="35"
                    Grid.Column="2"
-                   Margin="0, 0, 5, 0"
+                   Margin="0, 0, 0, 0"
                    HorizontalTextAlignment="Center"
-                   HorizontalOptions="Fill" />
+                   HorizontalOptions="Fill" FontAttributes="Bold"
+                   TextColor="Black"/>
+            </Border>
 
-            <Label Text="00"
+            <Border BackgroundColor="Gold"
+                Grid.Column="3"
+                Stroke="gray"
+                Margin="0, 0, 0, 0"
+                Padding="2,2,2,2"
+                HorizontalOptions="Fill">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="120,120,120,120"/>
+                </Border.StrokeShape>
+                <Label Text="00"
                    x:Name="lblNum4"
-                   FontSize="40"
+                   FontSize="35"
                    Grid.Column="3"
                    Margin="0, 0, 5, 0"
                    HorizontalTextAlignment="Center"
-                   HorizontalOptions="Fill" />
+                   HorizontalOptions="Fill" FontAttributes="Bold"
+                   TextColor="Black"/>
 
-            <Label Text="00"
+            </Border>
+            <Border BackgroundColor="Gold"
+                Grid.Column="4"
+                Stroke="gray"
+                Margin="0, 0, 0, 0"
+                Padding="2,2,2,2"
+                HorizontalOptions="Fill">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="120,120,120,120"/>
+                </Border.StrokeShape>
+                <Label Text="00"
                    x:Name="lblNum5"
-                   FontSize="40"
+                   FontSize="35"
                    Grid.Column="4"
-                   Margin="0, 0, 5, 0"
+                   Margin="0, 0, 0, 0"
                    HorizontalTextAlignment="Center"
-                   HorizontalOptions="Fill" />
+                   HorizontalOptions="Fill" FontAttributes="Bold"
+                   TextColor="Black"/>
+            </Border>
 
-            <Label Text="00"
+            <Border BackgroundColor="Gold"
+                Grid.Column="5"
+                Stroke="gray"
+                Margin="0, 0, 0, 0"
+                Padding="2,2,2,2"
+                HorizontalOptions="Fill">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="120,120,120,120"/>
+                </Border.StrokeShape>
+                <Label Text="00"
                    x:Name="lblNum6"
-                   FontSize="40"
+                   FontSize="35"
                    Grid.Column="5"
-                   Margin="0, 0, 5, 0"
+                   Margin="0, 0, 0, 0"
                    HorizontalTextAlignment="Center"
-                   HorizontalOptions="Fill" />
+                   HorizontalOptions="Fill" FontAttributes="Bold"
+                   TextColor="Black"/>
+            </Border>
         </Grid>
         <!--#endregion-->
 
@@ -131,5 +215,26 @@
             Text="Lucky Pick"
             HorizontalOptions="Center"/>
         <!--#endregion-->
+
+
+        <Border StrokeThickness="4"
+        StrokeShape="RoundRectangle 40,0,0,40"
+        Background="#2B0B98"
+        Padding="16,8"
+        HorizontalOptions="Center">
+            <Border.BackgroundColor>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="Orange"
+                          Offset="0.1" />
+                    <GradientStop Color="Brown"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.BackgroundColor>
+            <Label Text=".NET MAUI"
+           TextColor="White"
+           FontSize="18"
+           FontAttributes="Bold" />
+        </Border>
+
     </StackLayout>
 </ContentPage>
