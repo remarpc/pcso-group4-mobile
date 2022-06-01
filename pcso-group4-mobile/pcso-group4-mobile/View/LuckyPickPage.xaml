@@ -54,15 +54,15 @@
             <Picker x:Name="game_picker"                    
                     Title="Select Lotto Game"
                     FontSize="14"
-                    HorizontalOptions="Fill">
-                <!--ItemsSource="{Binding games}"
-                    ItemDisplayBinding="{Binding Game}"
-                    >-->
+                    HorizontalOptions="Fill"
+                    ItemsSource="{Binding games}"
+                    ItemDisplayBinding="{Binding GameID}"
+                    >
             </Picker>
             <!--#endregion-->
         </Border>
-        
-       
+
+
 
 
         <!--#region horizontal labels for 6 numbers -->

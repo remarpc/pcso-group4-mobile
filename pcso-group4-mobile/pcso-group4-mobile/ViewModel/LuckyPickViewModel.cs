@@ -18,23 +18,14 @@ namespace pcso_group4_mobile.ViewModel;
 
 public partial class LuckyPickViewModel : BaseViewModel
 {
-   public List<GameModel> games { get; set; }
+    ServiceClient sc = new ServiceClient();
+    public List<GameModel> games { get; set; }
 
     public LuckyPickViewModel()
     {
-        //Task<List<GameModel>> task = ServiceClient.GetGames();
-
-        //var temp = task.Result;
-        //foreach (var item in temp)
-        //{
-        //    games.Add(item);
-        //}
-
-       ServiceClient.GetGames().GetAwaiter();
-
-       
+        games = sc.GetGamesAsync();
     }
-
+   
     
 }
 
