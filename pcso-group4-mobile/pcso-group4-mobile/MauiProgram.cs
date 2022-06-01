@@ -3,6 +3,8 @@ using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Markup;
 using pcso_group4_mobile.View;
 using pcso_group4_mobile.ViewModel;
+using pcso_group4_mobile.Service;
+using pcso_group4_mobile.Model;
 
 namespace pcso_group4_mobile;
 
@@ -30,6 +32,12 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<LuckyPickViewModel>();
         builder.Services.AddSingleton<LuckyPickPage>();
+
+        builder.Services.AddSingleton<ServiceClient>();
+
+        builder.Services.AddSingleton<GameModel>();
+        builder.Services.AddSingleton<CombinationModel>();
+
 
         return builder.Build();
     }
