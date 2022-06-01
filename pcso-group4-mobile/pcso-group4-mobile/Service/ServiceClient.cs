@@ -1,4 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using pcso_group4_mobile.Model;
 
 namespace pcso_group4_mobile.Service;
@@ -15,12 +20,13 @@ public class ServiceClient
             {
                 var response = await client.GetStringAsync("https://pcso-group4-backend.azurewebsites.net/gameitems");                
                 var games = JsonConvert.DeserializeObject<List<GameModel>>(response);
-                return games;
-            }
+            return games;
+        }
         }
         catch (Exception)
         {
             throw;
         }
+    
     }
 }
