@@ -1,8 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace pcso_group4_mobile.ViewModel
+namespace pcso_group4_mobile.ViewModel;
+
+public  class BaseViewModel : ObservableObject
 {
-    public class BaseViewModel : ObservableObject
-    {
-    }
 }

@@ -1,18 +1,40 @@
+using Newtonsoft.Json;
 using pcso_group4_mobile.ViewModel;
 using System.Collections.ObjectModel;
+using System.Net.Http.Headers;
+using System.Linq;
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Net.Http;
+
 
 namespace pcso_group4_mobile.View;
 
 public partial class LuckyPickPage : ContentPage
 {
-    GamesViewModel viewModel;
-    public List<Games> games = new List<Games>();
+
+    public List<Games> games { get; set; }
 
     public LuckyPickPage(LuckyPickViewModel luckyPickViewModel)
 	{
         InitializeComponent();
-        
-        games = new List<Games>()
+        BindingContext = luckyPickViewModel;        
+
+        var gamelist = GameList();
+        foreach (var item in gamelist)
+        {
+            game_picker.Items.Add(item.Game.ToString());
+        }
+    }
+
+    private List<Games> GameList()
+    {
+        return games = new List<Games>()
         {
             new Games() { ID = 1, Game = 642 },
             new Games() { ID = 2, Game = 645 },
@@ -21,42 +43,6 @@ public partial class LuckyPickPage : ContentPage
             new Games() { ID = 5, Game = 658 }
         };
 
-
-        var monkeyList = new List<string>();
-        monkeyList.Add("Baboon");
-        monkeyList.Add("Capuchin Monkey");
-        monkeyList.Add("Blue Monkey");
-        monkeyList.Add("Squirrel Monkey");
-        monkeyList.Add("Golden Lion Tamarin");
-        monkeyList.Add("Howler Monkey");
-        monkeyList.Add("Japanese Macaque");  
-        
-        game_picker1.ItemsSource = monkeyList;
-        game_picker1.Title = "Select a monkey";
-
-        //picker_1.SetBinding(Picker.ItemsSourceProperty, "games");
-        //picker_1.ItemDisplayBinding = new Binding("Game");
-        //picker_1.ItemsSource = games;
-
-
-        BindingContext = luckyPickViewModel;
-        //picker_1.ItemDisplayBinding = new Binding("Game");
-        //picker_1.BindingContext = games;
-
-
-    }
-
-    private void Picker_SelectedIndexChanged(object sender, EventArgs e)
-    {
-        var _picker = sender as Picker;
-        var collection = viewModel.gamesList;
-        var index = _picker.SelectedIndex;
-        //if (!picker_2.IsEnabled)
-        //{
-        //    picker_2.IsEnabled = true;
-        //    picker_2.Title = "Select the PizzaIngredien";
-        //}
-        //picker_2.ItemsSource = new ObservableCollection<PizzaIngrediens>(collection[index].PizzaIngredientsList);
     }
 
 }

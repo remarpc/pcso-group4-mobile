@@ -14,7 +14,7 @@
             Text="Lucky Pick"
             HorizontalOptions="Center"/>
         <!--#endregion-->
-        
+
         <!--#region Two side-by-side buttons-->
         <Grid>
             <Grid.ColumnDefinitions>
@@ -38,33 +38,29 @@
         <!--#region dropdownbox for list of games -->
         <Border
             Stroke="gray"
-            Margin="0, 0, 0 , 20"
+            Margin="0, 40, 0 , 20"
             Padding="5,0,5,0"
             HorizontalOptions="Fill">
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="5,5,5,5"/>
             </Border.StrokeShape>
+
             <!--<Picker x:Name="picker_1" 
                 Title="Select Lotto Game" 
                 Margin="0, 40, 0 , 0"
                 ItemsSource="{Binding games}"
                 ItemDisplayBinding="{Binding Game}" 
                 SelectedIndexChanged="Picker_SelectedIndexChanged" />-->
-            <Picker x:Name="game_picker" 
+            <Picker x:Name="game_picker"                    
                     Title="Select Lotto Game"
                     FontSize="14"
                     HorizontalOptions="Fill">
-                <Picker.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>642</x:String>
-                    <x:String>645</x:String>
-                    <x:String>649</x:String>
-                    <x:String>655</x:String>
-                    <x:String>658</x:String>
-                </x:Array>
-            </Picker.ItemsSource>
-        </Picker>
-        <!--#endregion-->
+            </Picker>
+            <!--#endregion-->
+        </Border>
+        
+       
+
 
         <!--#region horizontal labels for 6 numbers -->
         <Grid Margin="0, 40, 0, 0">
@@ -91,7 +87,7 @@
                    Margin="0, 0, 5, 0"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Fill" />
-            
+
             <Label Text="00"
                    x:Name="lblNum3"
                    FontSize="40"
@@ -99,7 +95,7 @@
                    Margin="0, 0, 5, 0"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Fill" />
-            
+
             <Label Text="00"
                    x:Name="lblNum4"
                    FontSize="40"
@@ -107,7 +103,7 @@
                    Margin="0, 0, 5, 0"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Fill" />
-            
+
             <Label Text="00"
                    x:Name="lblNum5"
                    FontSize="40"
@@ -115,7 +111,7 @@
                    Margin="0, 0, 5, 0"
                    HorizontalTextAlignment="Center"
                    HorizontalOptions="Fill" />
-            
+
             <Label Text="00"
                    x:Name="lblNum6"
                    FontSize="40"
