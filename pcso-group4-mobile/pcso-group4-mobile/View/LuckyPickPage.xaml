@@ -54,7 +54,9 @@
             <Picker x:Name="game_picker"                    
                     Title="Select Lotto Game"
                     FontSize="14"
-                    HorizontalOptions="Fill">
+                    HorizontalOptions="Fill"
+                    ItemsSource="{Binding games}"
+                    ItemDisplayBinding="{Binding Game}">
             </Picker>
             <!--#endregion-->
         </Border>
