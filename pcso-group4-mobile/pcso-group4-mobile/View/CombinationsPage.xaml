@@ -26,13 +26,15 @@
             <Border.StrokeShape>
                 <RoundRectangle CornerRadius="5,5,5,5"/>
             </Border.StrokeShape>
-            <!--<Picker x:Name="picker_1" 
-                    Title="Select Lotto Game" 
-                    Margin="0, 40, 0 , 0"
+            <Picker x:Name="game_picker"                    
+                    Title="Select Lotto Game"
+                    FontSize="14"
+                    HorizontalOptions="Fill"
                     ItemsSource="{Binding games}"
-                    ItemDisplayBinding="{Binding Game}" 
-                    SelectedIndexChanged="Picker_SelectedIndexChanged" />-->
-            <Picker x:Name="game_combination" 
+                    ItemDisplayBinding="{Binding GameID}"
+                    SelectedIndexChanged="gamePickerSelectedIndexChanged">
+            </Picker>
+            <!--<Picker x:Name="game_combination" 
                     Title="Select Lotto Game"
                     FontSize="14"
                     SelectedItem="{Binding GameId}"
@@ -46,7 +48,7 @@
                         <x:String>658</x:String>
                     </x:Array>
                 </Picker.ItemsSource>
-            </Picker>
+            </Picker>-->
         </Border>
         <!--#endregion-->
 

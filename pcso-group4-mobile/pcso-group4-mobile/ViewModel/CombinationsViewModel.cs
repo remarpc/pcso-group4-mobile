@@ -1,5 +1,8 @@
-﻿using System;
+﻿using pcso_group4_mobile.Model;
+using pcso_group4_mobile.Service;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -10,8 +13,16 @@ namespace pcso_group4_mobile.ViewModel
 {
     public partial class CombinationsViewModel : BaseViewModel , INotifyPropertyChanged
     {
+        ServiceClient sc = new ServiceClient();
+
+        public ObservableCollection<GameModel> games { get; set; }
+
         public CombinationsViewModel()
         {
+            //get gametype
+            games = sc.GetGamesAsync();
+
+
             PostCombination = new Command(AddCombination);
             var c = new Combination()
             {

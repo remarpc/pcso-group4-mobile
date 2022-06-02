@@ -219,19 +219,22 @@
 
 
         <Border StrokeThickness="4"
-        StrokeShape="RoundRectangle 120,120,120,120"
-        Padding="16,8"
-        HorizontalOptions="Center">
-            <Border.Stroke>
-                <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="Orange" Offset="0.1" />
-                    <GradientStop Color="Brown" Offset="1.0" />
-                </LinearGradientBrush>
-            </Border.Stroke>
-            <Label Text="PCSO"
-           TextColor="White"
-           FontSize="18"
-           FontAttributes="Bold" />
+            StrokeShape="RoundRectangle 40,0,0,40"
+            Background="#2B0B98"
+            Padding="16,8"
+            HorizontalOptions="Center">
+                <!--<Border.BackgroundColor>
+                    <LinearGradientBrush EndPoint="0,1">
+                        <GradientStop Color="Orange"
+                              Offset="0.1" />
+                        <GradientStop Color="Brown"
+                              Offset="1.0" />
+                    </LinearGradientBrush>
+                </Border.BackgroundColor>-->
+            <Label Text=".NET MAUI"
+               TextColor="White"
+               FontSize="18"
+               FontAttributes="Bold" />
         </Border>
     </StackLayout>
 </ContentPage>
