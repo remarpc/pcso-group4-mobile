@@ -11,28 +11,21 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-
-
+using pcso_group4_mobile.Contracts;
+using System.Net.Http;
 
 namespace pcso_group4_mobile.ViewModel;
 
 public partial class LuckyPickViewModel : BaseViewModel
-{
-    ServiceClient sc = new ServiceClient();
-    public ObservableCollection<GameModel> games { get; set; }
+{  
+
+    IGame game = new GameService();   
+    public List<GameModel> games { get; set; }   
+  
 
     public LuckyPickViewModel()
     {
-        games = sc.GetGamesAsync();
-    }
-
-    private void GenerateLuckyPickNumbers(int num)
-    {
-        var rnd = new Random();
-        var randomNumbers = Enumerable.Range(1, num).OrderBy(x => rnd.Next()).Take(6).ToList();
-    }
-
-   
-    
+        games = Task.Run(() => game.GetGamesAsync()).Result;
+    }   
 }
 

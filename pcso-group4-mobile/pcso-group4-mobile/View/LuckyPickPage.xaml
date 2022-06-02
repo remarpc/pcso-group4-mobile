@@ -51,6 +51,7 @@
                     Title="Select Lotto Game"
                     FontSize="14"
                     HorizontalOptions="Fill"
+                    
                     ItemsSource="{Binding games}"
                     ItemDisplayBinding="{Binding GameID}"
                     SelectedIndexChanged="game_picker_SelectedIndexChanged">
@@ -218,23 +219,19 @@
 
 
         <Border StrokeThickness="4"
-        StrokeShape="RoundRectangle 40,0,0,40"
-        Background="#2B0B98"
+        StrokeShape="RoundRectangle 120,120,120,120"
         Padding="16,8"
         HorizontalOptions="Center">
-            <Border.BackgroundColor>
+            <Border.Stroke>
                 <LinearGradientBrush EndPoint="0,1">
-                    <GradientStop Color="Orange"
-                          Offset="0.1" />
-                    <GradientStop Color="Brown"
-                          Offset="1.0" />
+                    <GradientStop Color="Orange" Offset="0.1" />
+                    <GradientStop Color="Brown" Offset="1.0" />
                 </LinearGradientBrush>
-            </Border.BackgroundColor>
-            <Label Text=".NET MAUI"
+            </Border.Stroke>
+            <Label Text="PCSO"
            TextColor="White"
            FontSize="18"
            FontAttributes="Bold" />
         </Border>
-
     </StackLayout>
 </ContentPage>

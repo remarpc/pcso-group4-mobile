@@ -22,12 +22,12 @@ public class ServiceClient
                 var response = client.GetStringAsync(baseUrl + "gameitems");
                 var games = JsonConvert.DeserializeObject<ObservableCollection<GameModel>>(response.Result);
                 return games;
-            }           
+            }
         }
         catch (Exception)
         {
             throw;
         }
-
     }
+
 }
