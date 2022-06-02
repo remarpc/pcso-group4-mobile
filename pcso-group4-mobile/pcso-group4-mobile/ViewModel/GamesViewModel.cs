@@ -17,13 +17,4 @@ public class GamesViewModel
     }
 
     //public ObservableCollection<Games> gamesList { get; set; }
-
-    
 }
-
-public class Games
-{
-    public int ID { get; set; }
-    public int Game { get; set; }
-}
-
