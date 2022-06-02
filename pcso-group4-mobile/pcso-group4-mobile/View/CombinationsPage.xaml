@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="pcso_group4_mobile.View.CombinationsPage"
              xmlns:local="clr-namespace:pcso_group4_mobile"
-             
              Title="PCSO Lotto Lucky Picker">
     <StackLayout
         Orientation="Vertical"
@@ -35,21 +34,6 @@
                     SelectedItem="{Binding GameType}"
                     SelectedIndexChanged="gamePickerSelectedIndexChanged">
             </Picker>
-            <!--<Picker x:Name="game_combination" 
-                    Title="Select Lotto Game"
-                    FontSize="14"
-                    SelectedItem="{Binding GameId}"
-                    HorizontalOptions="Fill">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>642</x:String>
-                        <x:String>645</x:String>
-                        <x:String>649</x:String>
-                        <x:String>655</x:String>
-                        <x:String>658</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>-->
         </Border>
         <!--#endregion-->
 
@@ -176,19 +160,25 @@
         <!--#endregion-->
 
         <!--#region Listbox-->
+        <ScrollView 
+            Margin="10"
+            VerticalOptions="FillAndExpand"
+            VerticalScrollBarVisibility="Always"
+            BackgroundColor="LightGray">
         <CollectionView
             Background="White"
-            ItemsSource="{Binding Combinations}">
+            ItemsSource="{Binding cItems}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Label
                         TextColor="Black"
-                        FontSize="20"
-                        Margin="20"
-                        Text="{Binding}"/>
+                        FontSize="15"
+                        Margin="8"
+                        Text="{Binding result}"/>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        </ScrollView>
         <!--#endregion-->
     </StackLayout>
 </ContentPage>

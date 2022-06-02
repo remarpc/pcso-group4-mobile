@@ -1,16 +1,16 @@
+using pcso_group4_mobile.Contracts;
 using pcso_group4_mobile.Model;
 using pcso_group4_mobile.Service;
 using pcso_group4_mobile.ViewModel;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Text;
 
 namespace pcso_group4_mobile.View;
 
 public partial class CombinationsPage : ContentPage, INotifyPropertyChanged
 {
-    ServiceClient sc = new ServiceClient();
-
-    public ObservableCollection<GameModel> games { get; set; }
+    CombinationsViewModel cvm = new CombinationsViewModel();
+    ICombination ic = new CombinationService();
 
     int id;
     public int Id
@@ -37,10 +37,31 @@ public partial class CombinationsPage : ContentPage, INotifyPropertyChanged
 
     private void gamePickerSelectedIndexChanged(object sender, EventArgs e)
     {
+        int id = cp_game_picker.SelectedIndex;
+        List<CombinationsViewModel> combinations = new List<CombinationsViewModel>();
+        //combinations = cvm.combinations.ToList();
+
+        if (id > 0)
+        {
+            foreach (CombinationModel c in cvm.combinations.Where(i => i.Id == (id + 1)))
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.Append($"{((c.Digit1 < 10) ? String.Concat("0",c.Digit1.ToString()) : c.Digit1)}");
+                sb.Append($"{((c.Digit2 < 10) ? String.Concat("0", c.Digit2.ToString()) : c.Digit2)}");
+                sb.Append($"{((c.Digit3 < 10) ? String.Concat("0", c.Digit3.ToString()) : c.Digit3)}");
+                sb.Append($"{((c.Digit4 < 10) ? String.Concat("0", c.Digit4.ToString()) : c.Digit4)}");
+                sb.Append($"{((c.Digit5 < 10) ? String.Concat("0", c.Digit5.ToString()) : c.Digit5)}");
+                sb.Append($"{((c.Digit6 < 10) ? String.Concat("0", c.Digit6.ToString()) : c.Digit6)}");
+                c.result = sb.ToString();
+                cvm.cItems.Append(c);
+            }
+        }
+
+
 
     }
 
-    private bool isEntriesComplete()
+private bool isEntriesComplete()
     {
         bool response = true;
         if (txtNum1.Text == "" || txtNum1.Text == null) response = false;
@@ -105,7 +126,9 @@ public partial class CombinationsPage : ContentPage, INotifyPropertyChanged
                 Digit5 = Convert.ToInt16(txtNum5.Text),
                 Digit6 = Convert.ToInt16(txtNum6.Text)
             };
-            sc.PostCombination(c);
+
+            //public List<GameModel> games { get { return Task.Run(() => game.GetGamesAsync()).Result; } }
+            ic.AddNumberCombinationAsync(c);
             App.Current.MainPage.DisplayAlert("Info", $"Numbers combination for {getGameName(cp_game_picker)} Game saved.", "Ok");
 
             txtNum1.Text = String.Empty;

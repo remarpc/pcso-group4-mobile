@@ -1,18 +1,14 @@
 ﻿using CommunityToolkit.Maui;
 using CommunityToolkit.Maui.Core;
 using CommunityToolkit.Maui.Markup;
-using Microsoft.Extensions.Http;
+using pcso_group4_mobile.Model;
+using pcso_group4_mobile.Service;
 using pcso_group4_mobile.View;
 using pcso_group4_mobile.ViewModel;
-using pcso_group4_mobile.Service;
-using pcso_group4_mobile.Model;
-using pcso_group4_mobile.Contracts;
-
-
 
 namespace pcso_group4_mobile;
 
-public static class MauiProgram 
+public static class MauiProgram
 {
     public static MauiApp CreateMauiApp()
     {
@@ -21,7 +17,7 @@ public static class MauiProgram
             .UseMauiApp<App>()
             .UseMauiCommunityToolkit()
             .UseMauiCommunityToolkitMarkup()
-            .UseMauiCommunityToolkitCore()           
+            .UseMauiCommunityToolkitCore()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

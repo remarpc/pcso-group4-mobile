@@ -16,4 +16,5 @@ public class CombinationModel
     public int Digit4 { get; set; }
     public int Digit5 { get; set; }
     public int Digit6 { get; set; }
+    public string result { get; set; }
 }

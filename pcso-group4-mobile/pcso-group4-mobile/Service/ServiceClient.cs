@@ -46,8 +46,6 @@ public class ServiceClient
         {
             throw;
         }
-=======
->>>>>>> 0b70ecb659995cdc93213e8b9d692553587b05d0
     }
 
 }

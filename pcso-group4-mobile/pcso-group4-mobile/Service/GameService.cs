@@ -33,7 +33,7 @@ public class GameService : IGame
             string json = JsonConvert.SerializeObject(gameModel);
             StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
             var client = new HttpClient();
-            string url = "https://pcso-group4-backend.azurewebsites.net/gameitems/" + gameModel.ID;
+            string url = $"https://pcso-group4-backend.azurewebsites.net/gameitems/{gameModel.ID} ";
             client.BaseAddress = new Uri(url);
             HttpResponseMessage response = await client.PutAsync("", content);
             if (response.IsSuccessStatusCode)
