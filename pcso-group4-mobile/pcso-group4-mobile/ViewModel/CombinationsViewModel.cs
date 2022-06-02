@@ -13,8 +13,6 @@ namespace pcso_group4_mobile.ViewModel
 
         public CombinationsViewModel()
         {
-            //get gametype
-            games = sc.GetGamesAsync();
         }
     }
 }
