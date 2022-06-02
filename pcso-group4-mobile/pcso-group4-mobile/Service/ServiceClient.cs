@@ -30,4 +30,24 @@ public class ServiceClient
         }
     }
 
+    public async Task PostCombination(CombinationModel c)
+    {
+        try
+        {
+            string json = JsonConvert.SerializeObject(c);
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            using (var client = new HttpClient())
+            {
+                var response = await client.PostAsync(baseUrl + "combinationitems", content);
+            }
+        }
+        catch (Exception)
+        {
+            throw;
+        }
+=======
+>>>>>>> 0b70ecb659995cdc93213e8b9d692553587b05d0
+    }
+
 }

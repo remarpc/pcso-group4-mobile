@@ -8,12 +8,12 @@ namespace pcso_group4_mobile.Model;
 
 public class CombinationModel
 {
-    public int ID { get; set; }
-    public int GameID { get; set; }
-    public int Number1 { get; set; }
-    public int Number2 { get; set; }
-    public int Number3 { get; set; }
-    public int Number4 { get; set; }
-    public int Number5 { get; set; }
-    public int Number6 { get; set; }
+    public int Id { get; set; }
+    public int GameId { get; set; }
+    public int Digit1 { get; set; }
+    public int Digit2 { get; set; }
+    public int Digit3 { get; set; }
+    public int Digit4 { get; set; }
+    public int Digit5 { get; set; }
+    public int Digit6 { get; set; }
 }
