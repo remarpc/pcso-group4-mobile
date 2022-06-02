@@ -24,9 +24,12 @@ namespace pcso_group4_mobile.Service
             return await Task.FromResult(response.IsSuccessStatusCode);
         }
 
-        public Task<bool> DeleteNumberCombinationAsync(int id)
+        public async Task<bool> DeleteNumberCombinationAsync(int id)
         {
-            return Task.FromResult(true);
+            HttpClient client = new HttpClient();
+            client.BaseAddress = new Uri($"{url}combinationitems/{id}");
+            HttpResponseMessage response = await client.DeleteAsync("");
+            return await Task.FromResult(response.IsSuccessStatusCode);
         }
 
         public Task<CombinationModel> GetNumberCombinationAsync(int id)

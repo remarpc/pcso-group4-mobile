@@ -31,7 +31,6 @@
                     HorizontalOptions="Fill"
                     ItemsSource="{Binding games}"
                     ItemDisplayBinding="{Binding GameID}"
-                    SelectedItem="{Binding GameType}"
                     SelectedIndexChanged="gamePickerSelectedIndexChanged">
             </Picker>
         </Border>
@@ -160,25 +159,39 @@
         <!--#endregion-->
 
         <!--#region Listbox-->
-        <ScrollView 
+        <!--<ScrollView 
             Margin="10"
             VerticalOptions="FillAndExpand"
-            VerticalScrollBarVisibility="Always"
-            BackgroundColor="LightGray">
+            VerticalScrollBarVisibility="Default"
+            BackgroundColor="LightGray">-->
         <CollectionView
-            Background="White"
-            ItemsSource="{Binding cItems}">
+                x:Name="cv_combinations"
+                Margin="0, 20, 0, 0"
+                MaximumHeightRequest="400">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Label
-                        TextColor="Black"
-                        FontSize="15"
-                        Margin="8"
-                        Text="{Binding result}"/>
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem Text="Delete" BackgroundColor="Red" Clicked="SwipeDeleteItem_Clicked" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Frame Padding="0" CornerRadius="0">
+                            <StackLayout>
+                                <Label
+                                    BackgroundColor="White"
+                                    TextColor="Black"
+                                    FontSize="20"
+                                    Padding="8"
+                                    Text="{Binding result}"/>
+                            </StackLayout>
+                        </Frame>
+
+                    </SwipeView>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        </ScrollView>
+        <!--</ScrollView>-->
         <!--#endregion-->
     </StackLayout>
 </ContentPage>
