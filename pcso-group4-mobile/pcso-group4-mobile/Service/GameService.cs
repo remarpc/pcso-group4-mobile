@@ -11,9 +11,7 @@ using System.Threading.Tasks;
 namespace pcso_group4_mobile.Service;
 
 public class GameService : IGame
-{
-   
-
+{   
     public async Task<bool> AddGameAsync(GameModel gameModel)
     {
         if (gameModel.ID == 0)
