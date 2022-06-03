@@ -8,4 +8,5 @@ public interface IGame
     Task<bool> DeleteGameAsync(int id);
     Task<GameModel> GetGameAsync(int id);
     Task<List<GameModel>> GetGamesAsync();
+    Task<List<CombinationModel>> GetFrequencyAsync();
 }

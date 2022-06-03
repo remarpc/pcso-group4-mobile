@@ -92,4 +92,20 @@ public class GameService : IGame
         }
         return gameModelList;
     }
+
+    public async Task<List<CombinationModel>> GetFrequencyAsync()
+    {
+        var combinationModel = new List<CombinationModel>();
+        var client = new HttpClient();
+        string url = "https://pcso-group4-backend.azurewebsites.net/frequencyviewitems/";
+        client.BaseAddress = new Uri(url);
+        HttpResponseMessage response = await client.GetAsync("");
+
+        if (response.IsSuccessStatusCode)
+        {
+            string content = response.Content.ReadAsStringAsync().Result;
+            combinationModel = JsonConvert.DeserializeObject<List<CombinationModel>>(content);
+        }
+        return combinationModel;
+    }
 }

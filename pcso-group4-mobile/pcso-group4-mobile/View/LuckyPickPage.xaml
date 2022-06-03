@@ -30,10 +30,12 @@
                     Clicked="btnRandomNumber"/>
 
             <Button Text="Frequency"
+                    x:Name="btnFrequency"
                     Grid.Column="1"
                     Margin="5, 0, 0, 0"
                     BackgroundColor= "RoyalBlue"
-                    HorizontalOptions="Fill" />
+                    HorizontalOptions="Fill"
+                    Clicked="btnFrequency_Clicked"/>
         </Grid>
         <!--#endregion-->
 
@@ -216,25 +218,7 @@
             Text="Lucky Pick"
             HorizontalOptions="Center"/>
         <!--#endregion-->
-
-
-        <Border StrokeThickness="4"
-            StrokeShape="RoundRectangle 40,0,0,40"
-            Background="#2B0B98"
-            Padding="16,8"
-            HorizontalOptions="Center">
-                <!--<Border.BackgroundColor>
-                    <LinearGradientBrush EndPoint="0,1">
-                        <GradientStop Color="Orange"
-                              Offset="0.1" />
-                        <GradientStop Color="Brown"
-                              Offset="1.0" />
-                    </LinearGradientBrush>
-                </Border.BackgroundColor>-->
-            <Label Text=".NET MAUI"
-               TextColor="White"
-               FontSize="18"
-               FontAttributes="Bold" />
-        </Border>
+       
+       
     </StackLayout>
 </ContentPage>

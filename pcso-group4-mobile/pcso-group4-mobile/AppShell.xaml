@@ -9,10 +9,11 @@
 
     <TabBar
         Route="Tabs">
-        <Tab
+        <Tab 
             Title="Home"
             Icon="icon_dashboard.png">
             <ShellContent ContentTemplate="{DataTemplate views:HomePage}"/>
+            
         </Tab>
         <Tab 
             Title="Combinations"

@@ -65,5 +65,25 @@ public partial class LuckyPickPage : ContentPage
             lblNum6.Text = randomNumbers.ElementAt(5).ToString();
         }           
     }
-    
+
+    private void btnFrequency_Clicked(object sender, EventArgs e)
+    {
+        LuckyPickViewModel lp = new LuckyPickViewModel();
+
+        if (game_picker.SelectedIndex < 0)
+        {
+            App.Current.MainPage.DisplayAlert("Notice", "No selected game, please select", "Accept");
+        }
+        else
+        {
+            var frequency = new CombinationModel();
+            frequency = lp.frequency.Where(x => x.GameId == game_picker.SelectedIndex + 1).FirstOrDefault();
+            lblNum1.Text = frequency.Digit1.ToString();
+            lblNum2.Text = frequency.Digit2.ToString();
+            lblNum3.Text = frequency.Digit3.ToString();
+            lblNum4.Text = frequency.Digit4.ToString();
+            lblNum5.Text = frequency.Digit5.ToString();
+            lblNum6.Text = frequency.Digit6.ToString();
+        }
+    }
 }

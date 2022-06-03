@@ -21,10 +21,15 @@ public partial class LuckyPickViewModel : BaseViewModel
 
     IGame game = new GameService(); 
     public List<GameModel> games { get { return Task.Run(() => game.GetGamesAsync()).Result; } }
+    public List<CombinationModel> frequency { get { return Task.Run(() => game.GetFrequencyAsync()).Result; } }
 
     public LuckyPickViewModel()
     {
         
-    }   
+    }
+    
+
+    
+
 }
 
