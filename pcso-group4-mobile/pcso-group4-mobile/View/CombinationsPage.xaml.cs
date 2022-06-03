@@ -3,7 +3,6 @@ using pcso_group4_mobile.Model;
 using pcso_group4_mobile.Service;
 using pcso_group4_mobile.ViewModel;
 using System.ComponentModel;
-using System.Text;
 
 namespace pcso_group4_mobile.View;
 
@@ -151,8 +150,8 @@ public partial class CombinationsPage : ContentPage, INotifyPropertyChanged
 
             ic.AddNumberCombinationAsync(c);
             App.Current.MainPage.DisplayAlert("Info", $"Numbers combination for {getGameName(cp_game_picker)} Game saved.", "Ok");
-            List<CombinationModel> list = Task.Run(() => ic.GetNumberCombinationsAsync()).Result; 
-            List<CombinationModel> combinations = (List<CombinationModel>) list.Where(i => i.GameId == (gID)).ToList();
+            List<CombinationModel> list = Task.Run(() => ic.GetNumberCombinationsAsync()).Result;
+            List<CombinationModel> combinations = (List<CombinationModel>)list.Where(i => i.GameId == (gID)).ToList();
             DisplayCombinations(combinations);
 
             txtNum1.Text = String.Empty;

@@ -1,17 +1,5 @@
-using Newtonsoft.Json;
-using pcso_group4_mobile.ViewModel;
-using System.Collections.ObjectModel;
-using System.Net.Http.Headers;
-using System.Linq;
-
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Net.Http;
 using pcso_group4_mobile.Model;
+using pcso_group4_mobile.ViewModel;
 
 
 namespace pcso_group4_mobile.View;
@@ -22,7 +10,7 @@ public partial class LuckyPickPage : ContentPage
     public LuckyPickPage(LuckyPickViewModel luckyPickViewModel)
     {
         InitializeComponent();
-        BindingContext = luckyPickViewModel;         
+        BindingContext = luckyPickViewModel;
     }
 
     private void game_picker_SelectedIndexChanged(object sender, EventArgs e)
@@ -35,18 +23,18 @@ public partial class LuckyPickPage : ContentPage
         {
             Number = 45;
         }
-        else if(game_picker.SelectedIndex == 2)
+        else if (game_picker.SelectedIndex == 2)
         {
             Number = 49;
         }
-        else if(game_picker.SelectedIndex == 3)
+        else if (game_picker.SelectedIndex == 3)
         {
             Number = 55;
         }
-        else if(game_picker.SelectedIndex == 4)
+        else if (game_picker.SelectedIndex == 4)
         {
             Number = 58;
-        }        
+        }
     }
 
     private void btnRandomNumber(object sender, EventArgs e)
@@ -63,7 +51,7 @@ public partial class LuckyPickPage : ContentPage
             lblNum4.Text = randomNumbers.ElementAt(3).ToString();
             lblNum5.Text = randomNumbers.ElementAt(4).ToString();
             lblNum6.Text = randomNumbers.ElementAt(5).ToString();
-        }           
+        }
     }
 
     private void btnFrequency_Clicked(object sender, EventArgs e)
